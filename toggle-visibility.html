@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle-visibility</title>
+</head>
+
+<body>
+
+    <button class="show">Show paragraph</button>
+    <p class="para"></p>
+
+    <script>
+        const showBtn = document.querySelector('.show');
+        const paragraph = document.querySelector('.para');
+
+        showBtn.addEventListener('click', () => {
+            showBtn.classList.toggle('hide');
+
+            if (showBtn.classList.contains('hide')) {
+                paragraph.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, iusto consequatur reprehenderit et voluptates, iste totam fuga facere voluptas nam illum vitae cum delectus eius laborum obcaecati excepturi sit perferendis!'
+                showBtn.textContent = 'Hide paragraph'
+            } else {
+                paragraph.textContent = '';
+                showBtn.textContent = 'Show paragraph'
+            }
+            
+        })
+    </script>
+</body>
+
+</html>
