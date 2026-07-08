@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo-list</title>
+</head>
+<body>
+    
+    <input type="text" class="text-input">
+    <button class="add">ADD</button>
+    <ul class="list"></ul>
+
+    <script>
+        const inputValue = document.querySelector('.text-input');
+        const addBtn = document.querySelector('.add');
+        const list = document.querySelector('.list');
+
+        addBtn.addEventListener('click', () => {
+            const listValue = document.createElement('li');
+            const valueItem = inputValue.value;
+            listValue.textContent = valueItem;
+            list.appendChild(listValue);
+
+            inputValue.value = '';
+        })
+    </script>
+</body>
+</html>
