@@ -6,8 +6,16 @@
     <title>DAY-1</title>
 </head>
 <body>
-    
+    <button id="changePara">Click me</button>
+    <p id="para">Hello</p>
 
-    <script></script>
+    <script>
+        const clickBtn = document.getElementById('changePara');
+        const paragraph = document.getElementById('para');
+
+        clickBtn.addEventListener('click', () => {
+            paragraph.textContent = 'You clicked the button!'
+        });
+    </script>
 </body>
 </html>
