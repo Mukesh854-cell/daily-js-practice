@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<body>
+    
+    <button class="minus">-</button>
+    <p class="count">0</p>
+    <button class="plus">+</button>
+
+    <script>
+        const minusValue = document.querySelector('.minus');
+        const countValue = document.querySelector('.count');
+        const plusValue = document.querySelector('.plus');
+
+        let count = 0;
+
+        minusValue.addEventListener('click', () => {
+            countValue.textContent = --count;
+
+            if (count <= 0) {
+                alert('You reached ZERO');
+            }
+        })
+
+        plusValue.addEventListener('click', () => {
+            countValue.textContent = ++count;
+        })
+    </script>
+</body>
+</html>
