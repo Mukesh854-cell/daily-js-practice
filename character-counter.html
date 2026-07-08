@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character-counter</title>
+</head>
+<body>
+    <input type="text" class="characters">
+    <p class="counter"></p>
+    
+    <script>
+        const textInput = document.querySelector('.characters');
+        const counterInput = document.querySelector('.counter');
+
+        textInput.addEventListener('input', () => {
+            const inputValue = textInput.value.length;
+            counterInput.textContent = inputValue + " " + "characters" ;
+        })
+    </script>
+</body>
+</html>
