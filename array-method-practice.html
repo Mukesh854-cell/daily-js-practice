@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array-method-practice</title>
+</head>
+
+<body>
+
+    <script>
+
+        // FILTER AGE
+        const ages = [12, 45, 8, 67, 30, 15, 5];
+
+        const filteredAges = ages.filter((age) => {
+            return age >= 18;
+        });
+
+        console.log(ages);
+        console.log(filteredAges);
+
+        // FILTER FRUITS
+        const fruits = ['apple', 'banana', 'kiwi', 'grape', 'fig', 'mango'];
+
+        const filteredFruits = fruits.filter((fruit) => {
+            return fruit.length >= 4;
+        });
+
+        console.log(fruits);
+        console.log(filteredFruits);
+
+        // MAP 10% DISCOUNT
+        const prices = [10, 25, 50, 100];
+
+        const discountedPrice = prices.map((price) => {
+            return price - (price * 10) / 100;
+        });
+
+        console.log(prices);
+        console.log(discountedPrice);
+
+        // MAP CAPITALIZE FIRST CHARACTER
+        const name = ['amit', 'neha', 'rahul'];
+
+        const firstCharUpper = name.map((n) => {
+            const firstChar = n.charAt(0).toUpperCase();
+            const restOfWord = n.slice(1);
+            return firstChar + restOfWord;
+        });
+
+        console.log(name);
+        console.log(firstCharUpper);
+    </script>
+</body>
+
+</html>
