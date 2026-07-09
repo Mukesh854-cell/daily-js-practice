@@ -52,6 +52,20 @@
 
         console.log(name);
         console.log(firstCharUpper);
+
+        // FIND AGE THAT IS UNDER 18
+        const users = [
+            { name: 'Amit', age: 25 },
+            { name: 'Neha', age: 17 },
+            { name: 'Rahul', age: 30 }
+        ];
+
+        const underEighteen = users.find((user) => {
+            return user.age < 18;
+        });
+
+        console.log(users);
+        console.log(underEighteen);
     </script>
 </body>
 
