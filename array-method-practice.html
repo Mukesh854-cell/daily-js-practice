@@ -96,6 +96,20 @@
             return a - b;
         }));
 
+        // .SLICE() AND .SPLICE() METHOD
+        const letters = ['a', 'b', 'c', 'd', 'e'];
+
+        const sliceResult = letters.slice(1, 3);
+        console.log(sliceResult);
+        console.log(letters);
+
+        const spliceResult = letters.splice(1, 2);
+        console.log(spliceResult);
+        console.log(letters);
+
+        const nums = [1, 2, 3, 4, 5];
+        nums.splice(1, 1, 'X', 'Y');
+        console.log(nums);
     </script>
 </body>
 
