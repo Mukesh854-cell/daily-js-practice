@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO-WITH-ARRAY</title>
+</head>
+
+<body>
+    <input type="text" class="text-input">
+    <button class="add-list">Add List</button>
+    <ul class="list"></ul>
+
+    <script>
+
+        const textInput = document.querySelector('.text-input');
+        const addListBtn = document.querySelector('.add-list');
+        const list = document.querySelector('.list');
+
+        const toDo = [];
+
+        addListBtn.addEventListener('click', () => {
+            const textValue = textInput.value;
+            list.innerHTML = '';
+
+            toDo.push(textValue);
+
+            toDo.forEach((item) => {    
+                const listItems = document.createElement('li');
+                listItems.innerHTML = item;
+                list.appendChild(listItems);
+                console.log(toDo)
+            });
+            
+            textInput.value = '';
+        });
+    </script>
+</body>
+
+</html>
