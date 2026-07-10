@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SORT-NAMES</title>
+</head>
+
+<body>
+    <button class="display">Display name</button>
+    <ul class="listItem"></ul>
+
+    <script>
+        const displayBtn = document.querySelector('.display');
+        const list = document.querySelector('.listItem');
+
+        const names = ['Priya', 'Amit', 'Zara', 'Karan', 'Neha'];
+
+        displayBtn.addEventListener('click', () => {
+            list.innerHTML = '';
+
+            const sortNames = names.sort();
+
+            sortNames.forEach((name) => {
+                const listItems = document.createElement('li');
+                listItems.innerHTML = name;
+                list.appendChild(listItems);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
