@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPREAD-FOODS</title>
+</head>
+<body>
+
+    <input type="text" class="input-text">
+    <button class="display">Add</button>
+    <ul class="list"></ul>
+    
+    <script>
+
+        const inputText = document.querySelector('.input-text');
+        const displayBtn = document.querySelector('.display');
+        const list = document.querySelector('.list');
+
+        let foods = ['Pizza', 'Sushi', 'Tacos'];
+
+        displayBtn.addEventListener('click', () => {
+            const inputValue = inputText.value;
+            list.innerHTML = '';
+
+            foods = [...foods, inputValue];
+
+            foods.forEach((food) => {
+                const listItems = document.createElement('li');
+                listItems.innerHTML = food;
+                list.appendChild(listItems);
+            });
+
+            inputText.value = '';
+        });
+    </script>
+</body>
+</html>
