@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESTRUCTURE-PRODUCT</title>
+</head>
+
+<body>
+    <p class="display"></p>
+
+    <script>
+        const displayItem = document.querySelector('.display');
+
+        const product = { name: 'Laptop', price: 50000, inStock: true };
+
+        const { name, price } = product;
+
+        displayItem.textContent = name + " " + "-" + " ₹" + price;
+    </script>
+</body>
+
+</html>
