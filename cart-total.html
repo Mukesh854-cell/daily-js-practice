@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CART-TOTAL</title>
+</head>
+
+<body>
+    <input type="text" class="input-text">
+    <button class="add-item">Add Item</button>
+    <ul class="list"></ul>
+    <p class="total"></p>
+
+    <script>
+        const inputText = document.querySelector('.input-text');
+        const addItem = document.querySelector('.add-item');
+        const list = document.querySelector('.list');
+        const total = document.querySelector('.total');
+
+        const carts = [];
+
+        addItem.addEventListener('click', () => {
+            const inputValue = Number(inputText.value);
+            list.innerHTML = '';
+
+            carts.push(inputValue);
+
+            const value = carts.reduce((accumulator, current) => {
+                return accumulator + current;
+            }, 0);
+
+            carts.forEach((item) => {
+                const listItems = document.createElement('li');
+                listItems.innerHTML = item;
+                list.appendChild(listItems);
+                console.log(carts);
+            });
+            total.textContent = "Total: " + value;
+
+            inputText.value = '';
+        });
+    </script>
+</body>
+
+</html>
