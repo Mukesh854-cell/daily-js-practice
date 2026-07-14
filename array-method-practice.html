@@ -110,6 +110,21 @@
         const nums = [1, 2, 3, 4, 5];
         nums.splice(1, 1, 'X', 'Y');
         console.log(nums);
+
+        // .REDUCE() METHOD
+        const scores = [45, 89, 23, 67, 12];
+
+        const maximum = scores.reduce((accumulator, current) => {
+            // return current > accumulator ? current : accumulator;
+            if (current > accumulator) {
+                return current;
+            } else {
+                return accumulator;
+            }
+        }, scores[0])
+
+        console.log(maximum);
+
     </script>
 </body>
 
