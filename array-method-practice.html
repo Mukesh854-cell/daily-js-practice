@@ -121,9 +121,17 @@
             } else {
                 return accumulator;
             }
-        }, scores[0])
+        }, scores[0]);
 
         console.log(maximum);
+
+        const cart = [250, 400, 150, 600];
+
+        const total = cart.reduce((accumulator, current) => {
+            return accumulator + current;
+        }, 0);
+
+        console.log(total);
 
     </script>
 </body>
