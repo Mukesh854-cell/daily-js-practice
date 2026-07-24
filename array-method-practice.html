@@ -133,6 +133,24 @@
 
         console.log(total);
 
+        // FILTER / MAP
+        const products = [
+            { name: 'Pen', price: 20 },
+            { name: 'Notebook', price: 80 },
+            { name: 'Bag', price: 500 }
+        ];
+
+        const productPrice = products.filter((product) => {
+            return product.price > 50;
+        })
+
+        console.log(productPrice);
+
+        const priceWithTax = productPrice.map((product) => {
+            return product.price + (product.price * 18) / 100;
+        })
+
+        console.log(priceWithTax);
     </script>
 </body>
 
