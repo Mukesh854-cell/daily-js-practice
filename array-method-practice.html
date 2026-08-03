@@ -152,6 +152,7 @@
 
         console.log(priceWithTax);
 
+        // REDUCE()
         const goals = [15, 42, 8, 99, 23];
 
         const maxGoals = goals.reduce((accumulator, current) => {
@@ -164,11 +165,20 @@
 
         console.log(maxGoals);
 
+        // FILTER
         const aboveTwenty = goals.filter((goal) => {
             return goal > 20;
         });
 
         console.log(aboveTwenty);
+
+        // SORT()
+        const words = ['cat', 'elephant', 'dog', 'hippopotamus', 'ox'];
+        const wordLength = words.sort((a, b) => {
+            return a.length - b.length;
+        });
+
+        console.log(words);
     </script>
 </body>
 
