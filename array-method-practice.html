@@ -151,6 +151,24 @@
         })
 
         console.log(priceWithTax);
+
+        const goals = [15, 42, 8, 99, 23];
+
+        const maxGoals = goals.reduce((accumulator, current) => {
+            if (accumulator > current) {
+                return accumulator;
+            } else {
+                return current;
+            }
+        }, goals[0]);
+
+        console.log(maxGoals);
+
+        const aboveTwenty = goals.filter((goal) => {
+            return goal > 20;
+        });
+
+        console.log(aboveTwenty);
     </script>
 </body>
 
