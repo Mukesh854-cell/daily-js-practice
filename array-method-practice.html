@@ -178,7 +178,39 @@
             return a.length - b.length;
         });
 
-        console.log(words);
+        console.log(wordLength);
+
+        // REDUCE()
+        const items = [
+            {item: 'Shirt', price: 500, qty: 2}, 
+            {item: 'Shoes', price: 1200, qty: 1} 
+        ];
+
+        const totalCost = items.reduce((accumulator, current) => {
+            return accumulator + (current.price * current.qty);
+        }, 0);
+
+        console.log(totalCost);
+
+        const foods = [
+            {name: 'Coffee', price: 150},
+            {name: 'Sandwich', price: 300}
+        ];
+
+        const totalprice = foods.reduce((accumulator, current) => {
+            return accumulator + current.price;
+        }, 0);
+
+        console.log(totalprice);
+
+        // FIND()
+        const dishes = ['Pasta', 'Pizza', 'Burger', 'Salad'];
+
+        const dishWithB = dishes.find((dish) => {
+            return dish.startsWith('B');
+        })
+
+        console.log(dishWithB);
     </script>
 </body>
 
