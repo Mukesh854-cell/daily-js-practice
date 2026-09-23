@@ -232,6 +232,23 @@
         });
 
         console.log(arrangeVotes)
+
+        // SORT() 
+        const readings = [12, 45, 7, 89, 3];
+        const secHIghREading = readings.sort((a, b) => {
+            return b - a;
+        })
+
+        console.log(secHIghREading);
+        console.log(secHIghREading[1]);
+
+        // FILTER()
+        const animals = ['cat', 'wolf', 'ox', 'elephant'];
+        const greaterThanThree = animals.filter((animal) => {
+            return animal.length > 3;
+        });
+
+        console.log(greaterThanThree);
     </script>
 </body>
 
