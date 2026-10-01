@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paired-drill</title>
+</head>
+
+<body>
+
+    <div class="hot" data-temp="72">72</div>
+    <div class="hot" data-temp="95">95</div>
+    <div class="hot" data-temp="68">68</div>
+    <div class="hot" data-temp="101">101</div>
+    <div class="hot" data-temp="88">88</div>
+
+    <script>
+
+        const temps = [72, 95, 68, 101, 88];
+
+        const higherTemps = temps.filter((temp) => {
+            return temp > 90;
+        })
+        console.log(higherTemps);
+
+        // DOM
+        const hotTemps = document.querySelectorAll('.hot');
+
+        const aboveTemp = 90;
+
+        hotTemps.forEach((hotTemp) => {
+            if (Number(hotTemp.dataset.temp) > aboveTemp) {
+                hotTemp.style.backgroundColor = 'red';
+            } else {
+                hotTemp.style.backgroundColor = 'blue';
+            }
+        })
+    </script>
+</body>
+
+</html>
