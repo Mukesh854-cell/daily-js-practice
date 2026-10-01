@@ -261,6 +261,19 @@
 
         console.log(existBooking);
 
+        // FILTER() / REDUCE()
+        const packets = [120, 450, 80, 300, 600];
+        const morePackets = packets.filter((packet) => {
+            return packet > 200;
+        })
+
+        console.log(morePackets);
+
+        const packetsTotal = morePackets.reduce((accumulator, current) => {
+            return accumulator + current;
+        }, 0)
+
+        console.log(packetsTotal);
     </script>
 </body>
 
