@@ -249,6 +249,18 @@
         });
 
         console.log(greaterThanThree);
+
+        // FIND()
+        const bookings = [
+            { time: '7:00 PM', table: 4 },
+            { time: '8:00 PM', table: 2 }
+        ];
+        const existBooking = bookings.find((booking) => {
+            return booking.time === '8:00 PM';
+        })
+
+        console.log(existBooking);
+
     </script>
 </body>
 
