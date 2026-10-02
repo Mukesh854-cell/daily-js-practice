@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Drills</title>
+</head>
+
+<body>
+
+    <div class="stock" data-stock="0">0</div>
+    <div class="stock" data-stock="1">1</div>
+    <div class="stock" data-stock="2">2</div>
+    <div class="stock" data-stock="3">3</div>
+    <div class="stock" data-stock="4">4</div>
+
+    <script>
+        /*
+        const stock = [5, 0, 12, 0, 8];
+
+        const outOfStock = stock.filter((a) => {
+            return a === 0;
+        })
+        console.log(outOfStock);
+        */
+
+        // DOM
+        const items = document.querySelectorAll('.stock');
+
+        items.forEach((item) => {
+            if (Number(item.dataset.stock) === 0) {
+                item.style.backgroundColor = 'grey';
+                item.textContent = 'Out of Stock'
+            } else {
+                item.style.backgroundColor = 'Green';
+            }
+        })
+    </script>
+</body>
+
+</html>
