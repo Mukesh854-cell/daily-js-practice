@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Drill</title>
+</head>
+
+<body>
+    <div class="people" data-guests="1">1</div>
+    <div class="people" data-guests="2">2</div>
+    <div class="people" data-guests="3">3</div>
+    <div class="people" data-guests="4">4</div>
+    <div class="people" data-guests="5">5</div>
+
+    <script>
+        const guests = [2, 6, 4, 8, 3];
+
+        const moreGuests = guests.filter((guest) => {
+            return guest >= 5;
+        })
+        console.log(moreGuests)
+
+        // DOM
+        const people = document.querySelectorAll('.people');
+
+        people.forEach((person) => {
+            if (Number(person.dataset.guests) >= 5) {
+                person.style.backgroundColor = 'grey'
+                person.textContent = 'Large Table';
+            } else {
+                person.style.backgroundColor = 'lightgreen';
+            }
+        })
+    </script>
+</body>
+
+</html>
