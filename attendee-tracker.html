@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="input-name" placeholder="Enter your name">
+    <input type="text" placeholder="Enter your age" class="input-age">
+    <button class="add">ADD</button>
+    <ul class="list"></ul>
+    <p class="average-age"></p>
+
+    <script>
+        const inputName = document.querySelector('.input-name');
+        const inputAge = document.querySelector('.input-age');
+        const addName = document.querySelector('.add');
+        const list = document.querySelector('.list');
+        const averageAge = document.querySelector('.average-age');
+
+        const carts = [];
+
+        addName.addEventListener('click', () => {
+            const inputNameValue = inputName.value;
+            const inputAgeValue = Number(inputAge.value);
+            list.innerHTML = '';
+
+            const attendStudent = {
+                name: inputNameValue,
+                age: inputAgeValue
+            };
+
+            carts.push(attendStudent);
+
+            const value = carts.reduce((accumulator, current) => {
+                return accumulator + current.age;
+            }, 0);
+
+            const averageValue = value / carts.length;
+
+            carts.forEach((item) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${item.name} - ${item.age}`;
+                list.appendChild(listItem);
+            });
+
+            averageAge.textContent = `Average age: ${averageValue}`;
+            inputName.value = '';
+            inputAge.value = '';
+        });
+    </script>
+</body>
+
+</html>
