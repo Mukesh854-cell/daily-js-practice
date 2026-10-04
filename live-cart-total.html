@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" class="item-name" placeholder="Item name">
+    <input type="number" class="item-price" placeholder="Price">
+    <button class="add">ADD</button>
+    <ul class="list"></ul>
+    <p class="total"></p>
+
+    <script>
+        const itemName = document.querySelector('.item-name');
+        const itemPrice = document.querySelector('.item-price');
+        const addItem = document.querySelector('.add');
+        const list = document.querySelector('.list');
+        const itemTotal = document.querySelector('.total');
+
+        const carts = [];
+
+        addItem.addEventListener('click', () => {
+            itemNameValue = itemName.value;
+            itemPriceValue = Number(itemPrice.value);
+            list.innerHTML = '';
+
+            const newItem = {
+                name: itemNameValue,
+                price: itemPriceValue
+            };
+
+            carts.push(newItem);
+
+            const value = carts.reduce((accumulator, current) => {
+                return accumulator + current.price;
+            }, 0);
+
+            carts.forEach((item) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${item.name} - ${item.price}`;
+                list.appendChild(listItem);
+            });
+
+            itemTotal.textContent = `Total cost: ${value}`;
+            itemName.value = '';
+            itemPrice.value = '';
+        });
+    </script>
+</body>
+
+</html>
