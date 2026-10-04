@@ -282,6 +282,16 @@
         }, 0);
 
         console.log(totalGuests);
+
+        const cartItems = [
+            { item: 'Burger', price: 150, qty: 2 },
+            { item: 'Fries', price: 80, qty: 3 }
+        ];
+
+        const cartCost = cartItems.reduce((accumulator, current) => {
+            return accumulator + (current.price * current.qty);
+        }, 0);
+        console.log(cartCost);
     </script>
 </body>
 
