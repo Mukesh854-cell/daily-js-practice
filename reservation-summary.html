@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Summary Drill</title>
+</head>
+<body>
+    <input type="number" class="number-input">
+    <button class="add">ADD</button>
+    <ul class="list"></ul>
+    <p class="total"></p>
+
+    <script>
+        const inputBox = document.querySelector('.number-input');
+        const addBtn = document.querySelector('.add');
+        const list = document.querySelector('.list');
+        const totalGuest = document.querySelector('.total');
+
+        const carts = [];
+
+        addBtn.addEventListener('click', () => {
+            const inputValue = Number(inputBox.value);
+            list.innerHTML = '';
+
+            carts.push(inputValue);
+
+            const value = carts.reduce((accumulator, current) =>  {
+                return accumulator + current;
+            }, 0);
+
+            carts.forEach((item) => {
+                const listItems = document.createElement('li');
+                listItems.innerHTML = item;
+                list.appendChild(listItems);
+            });
+            totalGuest.textContent = `Total: ${value}`;
+
+            inputBox.value = '';
+        });
+    </script>
+</body>
+</html>
