@@ -292,6 +292,30 @@
             return accumulator + (current.price * current.qty);
         }, 0);
         console.log(cartCost);
+
+        // FILTER
+        const slots = [
+            { time: '6:00 PM', booked: true },
+            { time: '7:00 PM', booked: false },
+            { time: '8:00 PM', booked: true }
+        ];
+        const availtableSlots = slots.filter((book) => {
+            return book.booked === false;
+        })
+
+        console.log(availtableSlots);
+
+        // FIND
+        /*
+        const existingBooking = bookings.find((booking) => {
+            return booking.date === selectedDate && booking.time === selectedTime;
+        });
+
+        if (existingBooking) {
+            alert('This slot is already booked. Please choose another time.');
+            return;
+        }
+        */
     </script>
 </body>
 
