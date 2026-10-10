@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Drill</title>
+</head>
+<body>
+    <ul class="tray-list"></ul>
+    <p class="tray-total"></p>
+    
+    <script>
+        const tray = [
+            {name: 'Tea', price: 20, qty: 2},
+            {name: 'Samosa', price: 15, qty: 3}
+        ];
+
+        // localStorage.setItem('tray', JSON.stringify(tray));
+        // localStorage.getItem('tray');
+        const savedTray = JSON.parse(localStorage.getItem('tray'));
+        console.log(savedTray[0].price)
+
+        const trayList = document.querySelector('.tray-list');
+        const trayTotal = document.querySelector('.tray-total');
+
+        savedTray.forEach((item) => {
+            const listItems = document.createElement('li');
+            listItems.innerHTML = `${item.name} - Quantity(${item.qty}) - Price(${item.price * item.qty})`;
+            trayList.appendChild(listItems);
+        }); 
+        
+        const cartCost = savedTray.reduce((accumulator, current) => {
+            return accumulator + (current.price * current.qty);
+        }, 0);
+
+        trayTotal.textContent = `Total Amount: ${cartCost}`;
+    </script>
+</body>
+</html>
