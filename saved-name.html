@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Name</title>
+</head>
+
+<body>
+    <input type="text" class="name-input">
+    <button class="save">Save</button>
+    <p class="greeting"></p>
+
+    <script>
+        const inputName = document.querySelector('.name-input');
+        const greetingText = document.querySelector('.greeting');
+        const saveBtn = document.querySelector('.save');
+
+        let count = (localStorage.getItem('count')) ? (localStorage.getItem('count')) : '';
+
+        greetingText.textContent = `Hello, ${count}`;
+
+        saveBtn.addEventListener('click', () => {
+            const inputNameValue = inputName.value;
+            greetingText.textContent = `Hello, ${inputNameValue}`;
+            count = inputNameValue;
+            localStorage.setItem('count', count);
+        });
+    </script>
+</body>
+
+</html>
