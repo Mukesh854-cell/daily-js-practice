@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved List</title>
+</head>
+
+<body>
+    <input type="text" class="text-input">
+    <button class="add">Add</button>
+    <ul class="list"></ul>
+
+    <script>
+        const textInput = document.querySelector('.text-input');
+        const addBtn = document.querySelector('.add');
+        const list = document.querySelector('.list');
+
+        let toDo = localStorage.getItem('toDo') ? JSON.parse(localStorage.getItem('toDo')) : [];
+
+        function displayTasks() {
+            list.innerHTML = '';
+
+            toDo.forEach((item) => {
+                const listItems = document.createElement('li');
+                listItems.innerHTML = item;
+                list.appendChild(listItems);
+            });
+        }
+        displayTasks();
+
+        addBtn.addEventListener('click', () => {
+            textInputValue = textInput.value;
+
+            toDo.push(textInputValue);
+            localStorage.setItem('toDo', JSON.stringify(toDo));
+            displayTasks();
+            textInput.value = '';
+        });
+    </script>
+</body>
+
+</html>
