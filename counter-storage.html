@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Storage</title>
+</head>
+
+<body>
+    <div class="counter"></div>
+    <button class="add">Add</button>
+
+    <script>
+        const counterDiv = document.querySelector('.counter');
+        const addBtn = document.querySelector('.add');
+
+        let count = (localStorage.getItem('count')) ? Number(localStorage.getItem('count')) : 0;
+        counterDiv.textContent = count;
+
+        addBtn.addEventListener('click', () => {
+            count++;
+            counterDiv.textContent = count;
+            localStorage.setItem('count', count);
+        });
+
+    </script>
+</body>
+
+</html>
