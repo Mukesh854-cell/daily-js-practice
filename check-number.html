@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Numbers</title>
+</head>
+
+<body>
+    <input type="number" class="number-input">
+    <button class="check">Check</button>
+    <p class="result"></p>
+
+    <script>
+        const numberInput = document.querySelector('.number-input');
+        const checkBtn = document.querySelector('.check');
+        const result = document.querySelector('.result');
+
+        checkBtn.addEventListener('click', () => {
+            const numberInputValue = numberInput.value;
+
+            if (numberInputValue.trim() === '') {
+                result.textContent = 'Please enter a number.';
+                return;
+            }
+
+            if (numberInputValue > 0) {
+                result.textContent = `${numberInputValue} is Positive number.`;
+            } else if (numberInputValue < 0) {
+                result.textContent = `${numberInputValue} is Negative number.`;
+            } else {
+                result.textContent = `Zero`;
+            }
+
+            numberInput.value = '';
+        });
+    </script>
+</body>
+
+</html>
