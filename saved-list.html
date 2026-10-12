@@ -31,7 +31,7 @@
         displayTasks();
 
         addBtn.addEventListener('click', () => {
-            textInputValue = textInput.value;
+           const textInputValue = textInput.value;
 
             toDo.push(textInputValue);
             localStorage.setItem('toDo', JSON.stringify(toDo));

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Checker</title>
+</head>
+
+<body>
+    <input type="number" class="number-input">
+    <button class="check">Check</button>
+    <p class="result"></p>
+
+    <script>
+        const numberInput = document.querySelector('.number-input');
+        const checkBtn = document.querySelector('.check');
+        const result = document.querySelector('.result');
+
+        checkBtn.addEventListener('click', () => {
+            const numberInputValue = Number(numberInput.value);
+
+            if (numberInput.value === '') {
+                result.textContent = `Please enter a number`;
+                return;
+            }
+
+            if (numberInputValue % 2 === 0) {
+                result.innerHTML = `${numberInputValue} is an <strong>even</strong> number.`;
+            } else {
+                result.innerHTML = `${numberInputValue} is an <strong>odd</strong> number.`;
+            }
+
+            numberInput.value = '';
+        });
+    </script>
+</body>
+
+</html>
