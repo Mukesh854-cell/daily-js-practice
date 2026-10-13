@@ -27,6 +27,14 @@
             }
         } ,0)
         console.log(largestNum);
+
+        // REMOVE DUPLICATIONS
+        const duplicateNums = [1, 2, 2, 3, 4, 4, 5];
+
+        const normalNums = duplicateNums.filter((num, index) => {
+            return duplicateNums.indexOf(num) === index;
+        })
+        console.log(normalNums)
     </script>
 </body>
 </html>
