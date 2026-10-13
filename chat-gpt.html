@@ -8,12 +8,25 @@
 <body>
     
     <script>
+        // SUM OF NUMBERS
         const sum = [10, 20, 30, 40, 50];
 
         const addNum = sum.reduce((accumulator, current) => {
             return accumulator + current;
         }, 0);
         console.log(addNum);
+
+        // FIND LARGEST NUMBER
+        const nums = [12, 45, 7, 89, 23];
+
+        const largestNum = nums.reduce((accumulator, current) => {
+            if (current > accumulator) {
+                return current;
+            } else {
+                return accumulator;
+            }
+        } ,0)
+        console.log(largestNum);
     </script>
 </body>
 </html>
