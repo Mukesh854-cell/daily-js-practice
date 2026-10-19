@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Change</title>
+    <style>
+        .container {
+            height: 100px;
+            width: 300px;
+            border-radius: 10px;
+            background-color: black;
+            margin-bottom: 20px;
+            text-align: center;
+            
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .reset {
+            background-color: rgb(207, 170, 121);
+        }
+
+        .red,
+        .green,
+        .blue,
+        .reset {
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+            border-radius: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container"></div>
+    <button class="red">Red</button>
+    <button class="green">Green</button>
+    <button class="blue">Blue</button>
+    <button class="reset">Reset</button>
+
+    <script>
+        const container = document.querySelector('.container');
+        const redBtn = document.querySelector('.red');
+        const greenBtn = document.querySelector('.green');
+        const blueBtn = document.querySelector('.blue');
+        const resetBtn = document.querySelector('.reset');
+
+        redBtn.addEventListener('click', () => {
+            container.style.backgroundColor = 'red';
+            container.textContent = 'Red';
+        })
+        greenBtn.addEventListener('click', () => {
+            container.style.backgroundColor = 'green';
+            container.textContent = 'Green';
+        })
+        blueBtn.addEventListener('click', () => {
+            container.style.backgroundColor = 'blue';
+            container.textContent = 'Blue';
+        })
+        resetBtn.addEventListener('click', () => {
+            container.style.backgroundColor = 'white';
+            container.textContent = 'Default';
+        })
+
+    </script>
+</body>
+
+</html>
