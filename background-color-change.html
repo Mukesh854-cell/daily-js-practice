@@ -60,22 +60,37 @@
         const container = document.querySelector('.container');
         const allBtn = document.querySelectorAll('.color');
 
+        const colors = {
+            1: 'red',
+            2: 'green',
+            3: 'blue',
+        }
+
         allBtn.forEach((btn) => {
 
             btn.addEventListener('click', () => {
-                if (btn.dataset.color === '1') {
-                    container.style.backgroundColor = 'red';
-                    container.textContent = 'RED COLOR';
-                } else if (btn.dataset.color === '2') {
-                    container.style.backgroundColor = 'green';
-                    container.textContent = 'GREEN COLOR';
-                } else if (btn.dataset.color === '3') {
-                    container.style.backgroundColor = 'blue';
-                    container.textContent = 'BLUE COLOR';
-                } else {
+
+                if (btn.dataset.color === '4') {
                     container.style.backgroundColor = 'rgb(207, 170, 121)';
                     container.textContent = 'DEFAULT COLOR';
+                } else {
+                    container.style.backgroundColor = colors[btn.dataset.color];
+                    container.textContent = btn.textContent;
                 }
+
+                // if (btn.dataset.color === '1') {
+                //     container.style.backgroundColor = 'red';
+                //     container.textContent = 'RED COLOR';
+                // } else if (btn.dataset.color === '2') {
+                //     container.style.backgroundColor = 'green';
+                //     container.textContent = 'GREEN COLOR';
+                // } else if (btn.dataset.color === '3') {
+                //     container.style.backgroundColor = 'blue';
+                //     container.textContent = 'BLUE COLOR';
+                // } else {
+                //     container.style.backgroundColor = 'rgb(207, 170, 121)';
+                //     container.textContent = 'DEFAULT COLOR';
+                // }
 
             })
         })
