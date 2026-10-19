@@ -13,7 +13,13 @@
             background-color: black;
             margin-bottom: 20px;
             text-align: center;
-            
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            align-items: center;
+
         }
 
         .red {
@@ -32,10 +38,7 @@
             background-color: rgb(207, 170, 121);
         }
 
-        .red,
-        .green,
-        .blue,
-        .reset {
+        .color {
             color: white;
             border: none;
             padding: 8px 15px;
@@ -48,33 +51,33 @@
 
 <body>
     <div class="container"></div>
-    <button class="red">Red</button>
-    <button class="green">Green</button>
-    <button class="blue">Blue</button>
-    <button class="reset">Reset</button>
+    <button class="color red" data-color="1">Red</button>
+    <button class="color green" data-color="2">Green</button>
+    <button class="color blue" data-color="3">Blue</button>
+    <button class="color reset" data-color="4">Reset</button>
 
     <script>
         const container = document.querySelector('.container');
-        const redBtn = document.querySelector('.red');
-        const greenBtn = document.querySelector('.green');
-        const blueBtn = document.querySelector('.blue');
-        const resetBtn = document.querySelector('.reset');
+        const allBtn = document.querySelectorAll('.color');
 
-        redBtn.addEventListener('click', () => {
-            container.style.backgroundColor = 'red';
-            container.textContent = 'Red';
-        })
-        greenBtn.addEventListener('click', () => {
-            container.style.backgroundColor = 'green';
-            container.textContent = 'Green';
-        })
-        blueBtn.addEventListener('click', () => {
-            container.style.backgroundColor = 'blue';
-            container.textContent = 'Blue';
-        })
-        resetBtn.addEventListener('click', () => {
-            container.style.backgroundColor = 'white';
-            container.textContent = 'Default';
+        allBtn.forEach((btn) => {
+
+            btn.addEventListener('click', () => {
+                if (btn.dataset.color === '1') {
+                    container.style.backgroundColor = 'red';
+                    container.textContent = 'RED COLOR';
+                } else if (btn.dataset.color === '2') {
+                    container.style.backgroundColor = 'green';
+                    container.textContent = 'GREEN COLOR';
+                } else if (btn.dataset.color === '3') {
+                    container.style.backgroundColor = 'blue';
+                    container.textContent = 'BLUE COLOR';
+                } else {
+                    container.style.backgroundColor = 'rgb(207, 170, 121)';
+                    container.textContent = 'DEFAULT COLOR';
+                }
+
+            })
         })
 
     </script>
