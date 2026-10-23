@@ -68,22 +68,42 @@
         const message = document.querySelector('.message');
         const closeBtn = document.querySelector('.close-btn');
 
+        let timer ;
+
         successBtn.addEventListener('click', () => {
             toastContainer.style.display = 'flex';
             toastContainer.style.backgroundColor = 'lightgreen';
             message.textContent = 'Saved successfully!'
+
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+                toastContainer.style.display = 'none';
+            }, 3000)
         });
 
         errorBtn.addEventListener('click', () => {
             toastContainer.style.display = 'flex';
             toastContainer.style.backgroundColor = 'rgb(255, 150, 150)';
             message.textContent = 'Something went wrong!';
+
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+                toastContainer.style.display = 'none';
+            }, 3000)
         });
 
         infoBtn.addEventListener('click', () => {
             toastContainer.style.display = 'flex';
             toastContainer.style.backgroundColor = 'lightgrey';
             message.textContent = 'Here is some information.';
+
+            clearTimeout(timer);
+
+            timer = setTimeout(() => {
+                toastContainer.style.display = 'none';
+            }, 3000)
         });
 
         closeBtn.addEventListener('click', () => {
