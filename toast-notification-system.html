@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notification System</title>
+    <style>
+        .success-btn,
+        .error-btn,
+        .info-btn {
+            color: white;
+            padding: 8px 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 12px;
+        }
+
+        .success-btn {
+            color: white;
+            background-color: black;
+        }
+
+        .error-btn {
+            background-color: rgb(255, 0, 0);
+        }
+
+        .info-btn {
+            background-color: green;
+        }
+
+        .toast {
+            display: none;
+            padding: 0 15px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            margin-top: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            justify-content: space-between;
+        }
+
+        .close-btn {
+            font-size: 20px;
+            border: none;
+            font-weight: bold;
+            background: transparent;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button class="success-btn">Success</button>
+    <button class="error-btn">Error</button>
+    <button class="info-btn">Info</button>
+
+    <div class="toast">
+        <p class="message"></p>
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <script>
+        const successBtn = document.querySelector('.success-btn');
+        const errorBtn = document.querySelector('.error-btn');
+        const infoBtn = document.querySelector('.info-btn');
+        const toastContainer = document.querySelector('.toast');
+        const message = document.querySelector('.message');
+        const closeBtn = document.querySelector('.close-btn');
+
+        successBtn.addEventListener('click', () => {
+            toastContainer.style.display = 'flex';
+            toastContainer.style.backgroundColor = 'lightgreen';
+            message.textContent = 'Saved successfully!'
+        });
+
+        errorBtn.addEventListener('click', () => {
+            toastContainer.style.display = 'flex';
+            toastContainer.style.backgroundColor = 'rgb(255, 150, 150)';
+            message.textContent = 'Something went wrong!';
+        });
+
+        infoBtn.addEventListener('click', () => {
+            toastContainer.style.display = 'flex';
+            toastContainer.style.backgroundColor = 'lightgrey';
+            message.textContent = 'Here is some information.';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            toastContainer.style.display = 'none';
+        });
+
+    </script>
+</body>
+
+</html>
