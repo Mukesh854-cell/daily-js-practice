@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Drills</title>
+    <style>
+        .bill-items {
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bill-container"></div>
+
+    <script>
+        function getTax(subtotal, rate) {
+            return (subtotal * rate) / 100;
+        }
+        console.log(getTax(1530, 5));
+
+        function formatMoney(amount) {
+            return `₹` + amount.toFixed(2);
+        }
+        console.log(formatMoney(24));
+
+        // DOM
+        const billContainer = document.querySelector('.bill-container');
+
+        let dishes = [
+            { name: 'Pizza', price: 200 },
+            { name: 'Burger', price: 100 },
+            { name: 'Pasta', price: 300 }
+        ]
+
+        function billRow(dish) {
+            return `
+            <div class="bill-row">
+                <span class="dish-name">${dish.name}</span>
+                <span class="dish-price">${dish.price}</span>
+            </div>
+            `
+        }
+        console.log(billRow(dishes[0]))
+
+        billContainer.innerHTML =
+            `<div class="bill-items">${dishes.map(billRow).join('')}</div>`;
+    </script>
+</body>
+
+</html>
