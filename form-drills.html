@@ -8,8 +8,26 @@
 </head>
 
 <body>
+    <form action="" class="js-form">
+        <input name="username" type="text" class="js-name-input">
+        <button class="js-submit">Submit</button>
+    </form>
 
     <script>
+        const jsForm = document.querySelector('.js-form');
+        const jsNameInput = document.querySelector('.js-name-input');
+        const jsSubmit = document.querySelector('.js-submit');
+
+        jsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const userName = jsNameInput.value.trim();
+
+            if (userName === '') {
+                console.log('Name needed');
+            } else {
+                console.log('[' + userName + ']')
+            }
+        })
 
         // Not reliable: JS reads "e" between numbers as "times 10 to the power of",
         // so isNaN thinks '1234567e90' is a number and this wrongly returns true.
