@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Drill</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Not reliable: JS reads "e" between numbers as "times 10 to the power of",
+        // so isNaN thinks '1234567e90' is a number and this wrongly returns true.
+        function isValidPhone(phone) {
+            if (phone.length === 10 && !isNaN(phone)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(isValidPhone('1234567890'));
+        console.log(isValidPhone('1234567e90'));
+
+        // Returns true only if the text is exactly 10 digits (0-9) and nothing else.
+        // ^ = start of text, [0-9] = one digit, {10} = exactly 10 times, $ = end of text.
+        function isValidNumber(number) {
+            return /^[0-9]{10}$/.test(number);
+        }
+        console.log(isValidNumber('1234567890'));
+        console.log(isValidNumber('12345'));
+        console.log(isValidNumber('1234567e90'));
+        console.log(isValidNumber('12345egtfd'));
+
+    </script>
+</body>
+
+</html>
