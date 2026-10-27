@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Drill</title>
+</head>
+
+<body>
+    <form action="" class="js-form">
+        <input type="text" class="first-input">
+        <input type="text" class="second-input">
+        <button class="submit">Submit</button>
+    </form>
+    <script>
+        const fields = ['name', 'phone', 'address'];
+
+        function getNext(fields, current) {
+            const position = fields.indexOf(current);
+            const positionPlusOne = position + 1;
+
+            if (positionPlusOne === fields.length) {
+                return null;
+            }
+            return fields[positionPlusOne];
+        }
+        console.log(getNext(fields, 'name'));
+        console.log(getNext(fields, 'phone'));
+        console.log(getNext(fields, 'address'));
+
+        // DOM
+        const jsForm = document.querySelector('.js-form');
+        const firstInput = document.querySelector('.first-input');
+        const secondInput = document.querySelector('.second-input');
+        const submitBtn = document.querySelector('.submit');
+
+        jsForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            console.log('submitted');
+        })
+
+        firstInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                console.log('Enter pressed');
+            }
+        })
+    </script>
+</body>
+
+</html>
