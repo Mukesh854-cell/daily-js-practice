@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Drill</title>
+</head>
+
+<body>
+
+    <script>
+        function loadDraft(text) {
+            if (text === null) {
+                return { name: '', note: '' }
+            } else {
+                return JSON.parse(text);
+            }
+        }
+
+        console.log(loadDraft('{"name":"Asha", "note":"hi"}'));
+        console.log(loadDraft(null));
+
+        function saveDraft(draft) {
+            if (draft === null) {
+                return { name: '', note: '' }
+            } else {
+                return JSON.stringify(draft);
+            }
+        }
+
+        console.log(saveDraft({ name: 'Asha', note: 'hi' }));
+        console.log(saveDraft(null))
+    </script>
+</body>
+
+</html>
