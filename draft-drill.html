@@ -8,6 +8,10 @@
 </head>
 
 <body>
+    <form action="" class="js-form">
+        <input type="text" class="js-name">
+        <input type="text" class="js-note">
+    </form>
 
     <script>
         function loadDraft(text) {
@@ -31,6 +35,19 @@
 
         console.log(saveDraft({ name: 'Asha', note: 'hi' }));
         console.log(saveDraft(null))
+
+        // DOM
+        const jsForm = document.querySelector('.js-form');
+        const jsName = document.querySelector('.js-name');
+        const jsNote = document.querySelector('.js-note');
+
+        jsForm.addEventListener('click', () => {
+            const draft = {
+                name: jsName.value,
+                note: jsNote.value
+            }
+            localStorage.setItem('draft', JSON.stringify(draft));
+        })
     </script>
 </body>
 
