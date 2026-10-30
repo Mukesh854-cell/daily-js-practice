@@ -41,7 +41,7 @@
         const jsName = document.querySelector('.js-name');
         const jsNote = document.querySelector('.js-note');
 
-        jsForm.addEventListener('click', () => {
+        jsForm.addEventListener('input', () => {
             const draft = {
                 name: jsName.value,
                 note: jsNote.value
