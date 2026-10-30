@@ -11,6 +11,7 @@
     <form action="" class="js-form">
         <input type="text" class="js-name">
         <input type="text" class="js-note">
+        <button type="button" class="js-clear">Clear</button>
     </form>
 
     <script>
@@ -40,6 +41,7 @@
         const jsForm = document.querySelector('.js-form');
         const jsName = document.querySelector('.js-name');
         const jsNote = document.querySelector('.js-note');
+        const jsClear = document.querySelector('.js-clear');
 
         jsForm.addEventListener('input', () => {
             const draft = {
@@ -52,11 +54,23 @@
         const saveText = localStorage.getItem('draft');
         console.log(saveText);
 
-        const draftID = loadDraft(saveText); 
+        const draftID = loadDraft(saveText);
         console.log(draftID)
 
         jsName.value = draftID.name;
         jsNote.value = draftID.note;
+
+        localStorage.setItem('temp', 'hello')
+        console.log(localStorage.getItem('temp'))
+        localStorage.removeItem('temp')
+        console.log(localStorage.getItem('temp'))
+
+        jsClear.addEventListener('click', () => {
+            jsName.value = '';
+            jsNote.value = '';
+            localStorage.removeItem('draft');
+        })
+
     </script>
 </body>
 
