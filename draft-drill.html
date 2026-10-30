@@ -48,6 +48,15 @@
             }
             localStorage.setItem('draft', JSON.stringify(draft));
         })
+
+        const saveText = localStorage.getItem('draft');
+        console.log(saveText);
+
+        const draftID = loadDraft(saveText); 
+        console.log(draftID)
+
+        jsName.value = draftID.name;
+        jsNote.value = draftID.note;
     </script>
 </body>
 
