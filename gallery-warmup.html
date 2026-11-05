@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Warmup</title>
+</head>
+
+<body>
+
+    <div class="grid"></div>
+
+    <script>
+        const album = [
+            {
+                id: 1,
+                url: "https://media.istockphoto.com/id/1381637603/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=w64j3fW8C96CfYo3kbi386rs_sHH_6BGe8lAAAFS-y4="
+            },
+            {
+                id: 2,
+                url: "https://www.shutterstock.com/image-photo/fabulous-colorful-scenery-mountains-during-260nw-1912343491.jpg"
+            },
+            {
+                id: 3,
+                url: "https://media.istockphoto.com/id/507476938/photo/summer-morning-scene-of-carpathian-mountains.jpg?s=170667a&w=0&k=20&c=diaU07_uiWN53tOmP3_iZnEQUKlk8_EC-NHr6xbIRS8="
+            },
+            {
+                id: 4,
+                url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcLh3NCsAafrzyyDl6mJBsa9gXjW0vnqBT2epPmx-SvG8WXzxEwVNQyYI&s=10"
+            },
+            {
+                id: 5,
+                url: "https://media.istockphoto.com/id/499564475/photo/magic-pink-rhododendron-flowers-on-summer-mountain.jpg?s=170667a&w=0&k=20&c=B4AbfYPNvKekpjH1HswcV-hjPdX9qrwI2FaldY4PoT0="
+            }
+        ];
+        const newAlbum = album.map((photo) => {
+            return photo.url;
+        })
+        console.log(newAlbum);
+
+
+        let page = 1;
+        function nextPage() {
+            return ++page;
+        }
+        console.log(nextPage());
+        console.log(nextPage());
+        console.log(nextPage());
+
+        // DOM
+        const gridDiv = document.querySelector('.grid');
+
+        album.forEach((item) => {
+            const image = document.createElement('img');
+            image.src = item.url;
+            gridDiv.appendChild(image);
+        });
+    </script>
+</body>
+
+</html>
