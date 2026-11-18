@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Cards</title>
+</head>
+
+<body>
+
+    <div class="grid"></div>
+
+    <script>
+        let query = 'nature';
+        let perPage = 12;
+        let page = 3;
+
+        console.log(`https://api.pexels.com/v1/search?query=${query}&per_page=${perPage}&page=${page}`);
+
+        let photosObj = [
+            {
+                id: 1,
+                photographer: 'Rohan',
+                src: {
+                    medium: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp'
+                }
+            },
+            {
+                id: 2,
+                photographer: 'Manav',
+                src: {
+                    medium: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKPgzMe_lAgFYZ5GHPzG_r1MFFEK2Dba06AKaWfAgtFxELwKJ9mCcnCg&s=10'
+                }
+            },
+            {
+                id: 3,
+                photographer: 'Jay',
+                src: {
+                    medium: 'https://static.vecteezy.com/system/resources/thumbnails/070/694/375/small_2x/snowy-mountains-with-pink-sky-and-clouds-photo.jpeg'
+                }
+            }
+        ]
+
+        const gridContainer = document.querySelector('.grid');
+
+        photosObj.forEach((photo) => {
+            const newDiv = document.createElement('div');
+            newDiv.classList.add('card');
+
+            const img = document.createElement('img');
+            img.src = photo.src.medium;
+
+            const para = document.createElement('p');
+            para.innerHTML = photo.photographer;
+
+            newDiv.appendChild(img);
+            newDiv.appendChild(para);
+
+            gridContainer.appendChild(newDiv);
+        })
+
+    </script>
+</body>
+
+</html>
