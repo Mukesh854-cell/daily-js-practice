@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Object</title>
+</head>
+
+<body>
+    <button class="click">Click</button>
+    <div class="container"></div>
+
+    <script>
+        let photosObj = {
+            id: 1,
+            photographer: 'Rohan',
+            src: {
+                small: 'a.jpg',
+                medium: 'https://static.vecteezy.com/system/resources/thumbnails/050/977/561/small/young-girl-showing-her-colorful-imagination-with-paint-splattered-on-her-face-photo.jpg'
+            }
+        }
+
+        const clickBtn = document.querySelector('.click');
+        const container = document.querySelector('.container');
+
+        clickBtn.addEventListener('click', () => {
+            const img = document.createElement('img');
+            img.src = photosObj.src.medium;
+            container.appendChild(img);
+        })
+
+        console.log(photosObj.src.medium);
+    </script>
+</body>
+
+</html>
