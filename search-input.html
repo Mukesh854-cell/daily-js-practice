@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Input</title>
+</head>
+
+<body>
+    <input type="text" class="textBox">
+    <button class="click">click</button>
+    <div class="container"></div>
+
+    <script>
+        const text = ' ';
+        const searchText = text.trim();
+        console.log(searchText);
+
+        if (searchText === '') {
+            console.log('type something');
+        } else {
+            console.log(searchText);
+        }
+
+        // DOM
+        const textBox = document.querySelector('.textBox');
+        const clickBtn = document.querySelector('.click');
+        const container = document.querySelector('.container');
+
+        clickBtn.addEventListener('click', () => {
+            const trimmedText = textBox.value.trim();
+            if (trimmedText === '') {
+                container.textContent = 'type something';
+            } else {
+                container.textContent = trimmedText;
+            }
+            textBox.value = '';
+        })
+    </script>
+</body>
+
+</html>
