@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="click">Click</button>
+    <p class="message hidden">Something went wrong</p>
+
+    <script>
+        let results = [
+            {
+                id: 1,
+                name: 'Rohan'
+            },
+            {
+                id: 2,
+                name: 'Jay'
+            },
+            {
+                id: 3,
+                name: 'Manav'
+            }
+        ]
+
+        if (results.length === 0) {
+            console.log("No photos found");
+        } else {
+            console.log(results.length);
+        }
+
+        // DOM
+        const clickBtn = document.querySelector('.click');
+        const messagePara = document.querySelector('.message');
+
+        clickBtn.addEventListener('click', () => {
+            messagePara.classList.toggle('hidden');
+        })
+
+        // /---------/
+        // function fakeFunc() {
+        // }
+        try {
+            console.log('start');
+            fakeFunc();
+            console.log('end');
+        } catch (error) {
+            console.log('something went wrong');
+        }
+    </script>
+</body>
+
+</html>
