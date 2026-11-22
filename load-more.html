@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load More</title>
+</head>
+
+<body>
+
+    <button class="load-more">Load More</button>
+    <div class="list"></div>
+
+    <script>
+        let page = 1;
+        let totalPages = 3;
+
+        function loadMore() {
+            if (page > totalPages) {
+                console.log('no more pages');
+                return;
+            } else {
+                console.log('loading page ' + page);
+                page++;
+            }
+        }
+        loadMore();
+        loadMore();
+        loadMore();
+        loadMore();
+
+        // DOM
+        const loadMoreBtn = document.querySelector('.load-more');
+        const list = document.querySelector('.list');
+
+        let count = 1;
+
+        loadMoreBtn.addEventListener('click', () => {
+            list.innerHTML += `
+                <p>Item ${count++}</p>
+                <p>Item ${count++}</p>
+                <p>Item ${count++}</p>
+            `
+        })
+    </script>
+</body>
+
+</html>
