@@ -37,11 +37,16 @@
         let count = 1;
 
         loadMoreBtn.addEventListener('click', () => {
-            list.innerHTML += `
-                <p>Item ${count++}</p>
-                <p>Item ${count++}</p>
-                <p>Item ${count++}</p>
-            `
+            // list.innerHTML += `
+            //     <p>Item ${count++}</p>
+            //     <p>Item ${count++}</p>
+            //     <p>Item ${count++}</p>
+            // `
+
+            // FOR LOOP
+            for (let i = 1; i <= 3; i++) {
+                list.innerHTML += `<p>Item ${count++}</p>`;
+            }
         })
     </script>
 </body>
