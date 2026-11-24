@@ -39,6 +39,15 @@
         for (let i = 1; i <= 20; i++) {
             listDiv.innerHTML += `<p>Item ${count++}</p>`;
         }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    console.log('reached the end');
+                }
+            })
+        })
+        observer.observe(markerDiv);
     </script>
 </body>
 
