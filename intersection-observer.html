@@ -34,16 +34,27 @@
         const listDiv = document.querySelector('.list');
         const markerDiv = document.querySelector('.marker');
 
+        let page = 1;
+        let totalPages = 3;
         let count = 1;
 
-        for (let i = 1; i <= 20; i++) {
-            listDiv.innerHTML += `<p>Item ${count++}</p>`;
+        function addItems() {
+            if (page > totalPages) {
+                return;
+            }
+            page++;
+
+            for (let i = 1; i <= 10; i++) {
+                listDiv.innerHTML += `<p>Item ${count++}</p>`;
+            }
         }
+        addItems();
+
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    console.log('reached the end');
+                    addItems();
                 }
             })
         })
