@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intersection Observer</title>
+    <style>
+        p {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list"></div>
+    <div class="marker">The end</div>
+    <script>
+        const items = [
+            { id: 1, isVisible: false },
+            { id: 2, isVisible: true },
+            { id: 3, isVisible: false }
+        ]
+
+        items.forEach((item) => {
+            if (item.isVisible) {
+                console.log(`item ${item.id} is visible`);
+            } else {
+                console.log(`item ${item.id} is hidden`);
+            }
+        })
+
+        // DOM
+        const listDiv = document.querySelector('.list');
+        const markerDiv = document.querySelector('.marker');
+
+        let count = 1;
+
+        for (let i = 1; i <= 20; i++) {
+            listDiv.innerHTML += `<p>Item ${count++}</p>`;
+        }
+    </script>
+</body>
+
+</html>
